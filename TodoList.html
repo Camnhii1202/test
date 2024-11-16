@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To-Do List</title>
+		<link rel="stylesheet" href="./TodoList.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="to-do-list-box">
+				<div class="to-do-list-title">
+					<h2>To-Do List</h2>
+					<div class="to-do-list-title-icon">
+						<i class="fa-solid fa-clipboard-list"></i>
+					</div>
+				</div>
+				<div class="to-do-list-input-container">
+					<form action="" autocomplete="off">
+						<input
+							type="text"
+							id="to-do-list-input-text"
+							placeholder="Nhập công việc cần làm"
+						/>
+
+						<label
+							class="to-do-list-input-custom-datetime"
+							id="to-do-list-input-datetime-label"
+						>
+							<i class="fa-regular fa-calendar-check"></i>
+						</label>
+						<input type="datetime-local" id="to-do-list-input-datetime" />
+
+						<button
+							type="submit"
+							id="to-do-list-input-button"
+							onclick="handleAddButton(event)"
+						>
+							<i class="fa-solid fa-plus"></i>
+						</button>
+					</form>
+					<div class="text-error" id="error-message">
+						<span>* Vui lòng nhập gì đó </span>
+					</div>
+				</div>
+				<div class="to-do-list-listjob-container">
+					<ul id="to-do-list-listjob">
+						<li class="to-do-list-item">
+							<div class="to-do-list-item-left">
+								<label class="custom-checkbox">
+									<input type="checkbox" onclick="handleCompleteTask(event)" />
+									<span class="checkmark"></span>
+									<div class="to-do-list-item-content-container">
+										<div class="to-do-list-item-content">Công việc 1</div>
+										<div class="to-do-list-item-datetime">Hạn hoàn thành</div>
+									</div>
+								</label>
+							</div>
+							<div class="to-do-list-item-delete">
+								<i class="fa-solid fa-xmark" onclick="handleDeleteButton(event)"></i>
+							</div>
+						</li>
+						<li class="to-do-list-item">
+							<div class="to-do-list-item-left">
+								<label class="custom-checkbox">
+									<input type="checkbox" onclick="handleCompleteTask(event)" />
+									<span class="checkmark"></span>
+									<div class="to-do-list-item-content-container">
+										<div class="to-do-list-item-content">Công việc 2</div>
+										<div class="to-do-list-item-datetime">Hạn hoàn thành</div>
+									</div>
+								</label>
+							</div>
+							<div class="to-do-list-item-delete">
+								<i class="fa-solid fa-xmark" onclick="handleDeleteButton(event)"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="TodoList.js" defer></script>
+	</body>
+</html>
